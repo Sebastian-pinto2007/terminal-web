@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Empresas - Terminal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html"><img src="assets/img/logo.png" alt="Logo" class="logo" /></a>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="empresas.html" class="active">Empresas</a></li>
+          <li><a href="rutas.html">Rutas</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="reservar.html" class="btn-primary">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Empresas de Transporte Vinculadas</h1>
+    <div id="empresasList" class="cards"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Terminal - Contacto</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const empresas = [
+      { id:1, nombre:"Transporte Andino", telefono:"(000)111222", descripcion:"Empresa regional." },
+      { id:2, nombre:"Viajes del Norte", telefono:"(000)333444", descripcion:"Servicios interdepartamentales." }
+    ];
+    const cont = document.getElementById('empresasList');
+    empresas.forEach(e=>{
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<h3>${e.nombre}</h3><p>${e.descripcion}</p><p>Tel: ${e.telefono}</p>`;
+      cont.appendChild(div);
+    });
+  </script>
+</body>
+</html>
