@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rutas - Terminal</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header container header-inner">
+    <a href="index.html"><img src="assets/img/logo.png" alt="Logo" class="logo" /></a>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="empresas.html">Empresas</a></li>
+        <li><a href="rutas.html" class="active">Rutas</a></li>
+        <li><a href="horarios.html">Horarios</a></li>
+        <li><a href="reservar.html" class="btn-primary">Reservar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Rutas disponibles</h1>
+    <div id="rutasList"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Terminal - Rutas</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const rutas = [
+      { id:1, origen:"Ciudad A", destino:"Ciudad B", duracion:"3h", distancia:"180 km" },
+      { id:2, origen:"Ciudad A", destino:"Ciudad C", duracion:"1.5h", distancia:"80 km" }
+    ];
+    const rl = document.getElementById('rutasList');
+    rutas.forEach(r=>{
+      const el = document.createElement('div');
+      el.className='card';
+      el.innerHTML = `<h3>${r.origen} → ${r.destino}</h3><p>Duración: ${r.duracion} • Distancia: ${r.distancia}</p>
+      <p><a href="horarios.html?ruta=${r.id}" class="btn">Ver horarios</a></p>`;
+      rl.appendChild(el);
+    });
+  </script>
+</body>
+</html>
