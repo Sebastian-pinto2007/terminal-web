@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terminal de Transporte - Inicio</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/img/logo.png" alt="Logo Terminal" class="logo" />
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="empresas.html">Empresas</a></li>
+          <li><a href="rutas.html">Rutas</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="reservar.html" class="btn-primary">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Bienvenido a la Terminal de Transporte</h1>
+        <p>Consulta rutas, horarios y reserva tu tiquete en línea.</p>
+        <a href="rutas.html" class="btn-primary">Consultar Rutas</a>
+      </div>
+    </section>
+
+    <section class="search container">
+      <h2>Buscar salida</h2>
+      <form id="quickSearch" onsubmit="return false;">
+        <div class="grid">
+          <input id="origen" placeholder="Origen" aria-label="Origen" />
+          <input id="destino" placeholder="Destino" aria-label="Destino" />
+          <input id="fecha" type="date" aria-label="Fecha" />
+          <button onclick="buscarSalidas()" class="btn">Buscar</button>
+        </div>
+      </form>
+      <div id="searchResult" aria-live="polite"></div>
+    </section>
+
+    <section class="container how">
+      <h2>Cómo comprar</h2>
+      <ol>
+        <li>Busca ruta y horario.</li>
+        <li>Selecciona asientos y completa tus datos.</li>
+        <li>Recibe tu código de reserva en el correo.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Terminal de Transporte - Dirección: Calle Falsa 123 - Tel: (000) 123456</p>
+      <p>Información tomada del enunciado del proyecto.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
